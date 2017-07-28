@@ -6,3 +6,9 @@ from flask import render_template, request, flash, redirect
 def index():
     return render_template('index.html',
                            active='tab-info')
+
+
+@app.route('/partion')
+def partition_chart():
+    return render_template('widgets/partition_chart.html',
+                           active='tab-info')
