@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>RheoWB2 Web Interface</title>
+    {% block styles %}
+      <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}"></link>
+      <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap-theme.min.css')}}"></link>
+      <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"></link>
+      <link rel="stylesheet" href="{{url_for('static', filename='css/flash_messages.css')}}"></link>
+    {% endblock %}
+    {% block scripts %}
+      <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+      <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    {% endblock %}
+  </head>
+
+  <body>
+    <header>
+      {% include "include/navigation.html" %}
+    </header>
+
+    <div class="container-fluid">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    <footer id="footer">
+      <div class="container-fluid">
+
+      </div>
+    </footer>
+
+  </body>
+</html>
