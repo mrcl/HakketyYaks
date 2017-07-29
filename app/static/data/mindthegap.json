@@ -1,5 +1,5 @@
 {
-    "title" : "UN Sustainable Development Goals Expenditure",
+    "Title" : "UN Sustainable Development Goals Expenditure",
     "Goals" : [
         
         {
@@ -12,7 +12,46 @@
 
             ]
         },
-    
+        {
+            "Name" : "Zero Hunger",
+            "Number" : 2,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Good health and well-being",
+            "Number" : 3,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Quality Education",
+            "Number" : 4,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Gender Equality",
+            "Number" : 5,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
         {
             "Name" : "Clean water and sanitation",
             "Number" : 6,
@@ -92,6 +131,116 @@
                     "Reference" : "http://www.dairyatwork.co.nz/land-water/dairy-farmers-have-spent-one-billion-dollars-protecting-and-improving-the-environment-over-the-past-five-years/",
                     "Amount" : "10000"
                 }
+            ]
+        },
+        {
+            "Name" : "Affordable and Clean Energy",
+            "Number" : 7,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Decent work and economic growth",
+            "Number" : 8,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Industry, Innovation and Infrastructure",
+            "Number" : 9,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Reduced Inequalities",
+            "Number" : 10,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Sustainable Cities and Communities",
+            "Number" : 11,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Responsible consumption and production",
+            "Number" : 12,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Climate action",
+            "Number" : 13,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Life below water",
+            "Number" : 14,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Life on land",
+            "Number" : 15,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Peace, justice and strong institutions",
+            "Number" : 16,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+        {
+            "Name" : "Partnerships for the goals",
+            "Number" : 17,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
             ]
         }
     ]

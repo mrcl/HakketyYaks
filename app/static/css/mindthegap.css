@@ -1,2 +1,31 @@
 
-.mtg h1{text-align:center;}
+.mtg h1,.mtg p{text-align:center;}
+
+
+.goal{
+    text-align: center;
+    height:15em;
+    padding:0.8em;
+    border:solid 1px #e7e7e7;
+    margin-bottom:2em;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.095);
+}
+.goal:hover{
+    box-shadow:none;
+    cursor: pointer; cursor: hand;
+}
+
+.goal h3{position: relative;}
+.goal sup{font-size:10em;display:block;top:0.4em;text-align: left;color:#eaeaea;letter-spacing: -0.1em;}
+
+
+.small .goal{height:5em;width:5em;}
+.small .goal h3{display:none;text-align: center;}
+.small .goal:hover h3{
+    display:block;text-align:left;
+}
+.small .goal sup{font-size:2em;left:0;top:0.74em;color:#555;text-align: center;}
+
+.nav{float:left;margin-right:1em;}
+
+#goaldetail{clear:left;text-align:center;}

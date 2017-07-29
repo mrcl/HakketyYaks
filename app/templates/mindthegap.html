@@ -7,13 +7,16 @@
 
 {% block scripts %}
 {{ super() }}
-      <script src="{{url_for('static', filename='js/mindthegap.js')}}"></script>
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="{{url_for('static', filename='js/mindthegap.js')}}"></script>
 {% endblock %}
 
 {% block content %}
 <div class="mtg">
     <h1>{{ page['title'] }}</h1>
-
+    <p>Minding the gap between the estimated costs for NZ to achieve the UN Sustainability Goals and the current known expenditure.<br>&nbsp;</p>
+    <div id="goals"></div>
+    <div id="goaldetail"></div>
 </div>
 
 {% endblock %}
