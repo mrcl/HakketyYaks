@@ -4,7 +4,7 @@ pages = {
         'route': 'nz-revenue',
         'title': 'List of available annual NZ Revenue',
         'db_document': 'nz-revenue',
-        'template': 'list-view.html'
+        'template': 'nz-revenue.html'
     },
     'grant-hunter': {
         'name': 'Grant Hunter',

@@ -1,27 +1,4 @@
-{% extends "base.html" %}
-{% block styles %}
-  {{ super() }}
-  <style>
-
-  circle,
-  path {
-    cursor: pointer;
-  }
-
-  circle {
-    fill: none;
-    pointer-events: all;
-  }
-
-  </style>
-{% endblock %}
-
-
-{% block content %}
-  <div id="test"></div>
-  <script src="//d3js.org/d3.v3.min.js"></script>
-  <script>
-
+function partition_chart(id, json_file) {
   var margin = {top: 350, right: 480, bottom: 350, left: 480},
       radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
@@ -32,7 +9,7 @@
       .clamp(true)
       .range([90, 20]);
 
-  var svg = d3.select("#test").append("svg")
+  var svg = d3.select(id).append("svg")
       .attr("preserveAspectRatio", "xMinYMin meet")
       .attr("viewBox", "0 0 " + (margin.left + margin.right) + " " + (margin.top + margin.bottom) )
       // .attr("width", margin.left + margin.right)
@@ -52,7 +29,7 @@
       .innerRadius(function(d) { return radius / 3 * d.depth; })
       .outerRadius(function(d) { return radius / 3 * (d.depth + 1) - 1; });
 
-  d3.json("{{url_for('static', filename='data/revenue/revenue-2017.json')}}", function(error, root) {
+  d3.json(json_file, function(error, root) {
     if (error) throw error;
 
     // Compute the initial layout on the entire tree to sum sizes.
@@ -75,6 +52,7 @@
 
     var center = svg.append("circle")
         .attr("r", radius / 3)
+        .style("fill","rgb(255, 255, 255)")
         .on("click", zoomOut);
 
     center.append("title")
@@ -82,11 +60,12 @@
 
     var path = svg.selectAll("path")
         .data(partition.nodes(root).slice(1))
-      .enter().append("path")
+        .enter().append("path")
         .attr("d", arc)
         .style("fill", function(d) { return d.fill; })
         .each(function(d) { this._current = updateArc(d); })
         .on("click", zoomIn);
+
 
     function zoomIn(p) {
       if (p.depth > 1) p = p.parent;
@@ -142,6 +121,8 @@
             .style("fill", function(d) { return d.fill; })
             .on("click", zoomIn)
             .each(function(d) { this._current = enterArc(d); });
+            // .append("title")
+            // .text(function(d) { return d.name; });
 
         path.transition()
             .style("fill-opacity", 1)
@@ -177,6 +158,4 @@
   }
 
   d3.select(self.frameElement).style("height", margin.top + margin.bottom + "px");
-
-  </script>
-{% endblock %}
+}

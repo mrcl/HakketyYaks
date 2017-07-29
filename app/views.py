@@ -13,26 +13,29 @@ def index():
                            active='/',
                            pages=pages)
 
-
-
 @app.route('/nz-revenue')
-def revenue():
-
+@app.route('/nz-revenue/<year>')
+def revenue(year=None):
     path = url_for('static', filename='data/revenue')
     report_files = glob('app%s/*json'%path)
 
     reports = {}
     for rf in report_files:
-        reports['year'] = re.findall('201\d', rf)[0]
-        reports['json_file'] = rf.replace('app', '')
+        y = re.findall('201\d', rf)[0]
+        reports[y] = rf.replace('app', '')
 
+    years = list(reports.keys())
+    years.sort()
     route = 'nz-revenue'
 
     return render_template(pages[route]['template'],
                            active=route,
                            page=pages[route],
                            pages=pages,
-                           reports=reports)
+                           years=years,
+                           report=reports[year] if year else None,
+                           year=year
+                           )
 
 
 @app.route('/<route>', methods=['GET', 'POST'])
