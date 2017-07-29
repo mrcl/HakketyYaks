@@ -8,7 +8,7 @@ def index():
                            active='tab-info')
 
 
-@app.route('/partion')
+@app.route('/partition')
 def partition_chart():
     return render_template('widgets/partition_chart.html',
                            active='tab-info')
