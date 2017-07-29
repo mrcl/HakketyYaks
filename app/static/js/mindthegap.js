@@ -19,6 +19,7 @@ $.mindthegap = {
         $('.goal').click(function(){
             var numb = $(this).children('sup').html();
             $.mindthegap.goaldetail(numb);
+            
         });
     },
     goaldetail : function(id){
@@ -33,11 +34,12 @@ $.mindthegap = {
             }
         }
         
-        
         var stOut = '<h2>'+theGoal.Name+'</h2>';
 
         $('#goaldetail').html(stOut);
         $('#goaldetail').fadeIn();
+
+        $('.goal').mouseleave();
         //});
     }
 
