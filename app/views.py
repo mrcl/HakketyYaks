@@ -5,7 +5,7 @@ from app import app
 from flask import render_template, request, flash, redirect, url_for
 from .pages import pages
 from .forms import GrantForm
-
+import app.grant_hunter_vars as ghv
 
 @app.route('/')
 def index():
@@ -38,7 +38,21 @@ def revenue(year=None):
                            )
 
 
-@app.route('/<route>', methods=['GET', 'POST'])
+@app.route('/grant-hunter', methods=['GET', 'POST'])
+def grant_hunter():
+
+    if request.method == 'POST':
+        return render_template('grant-hunter-results.html',
+                               pages=pages,
+                               method=request.method,
+                               form=GrantForm(),
+                               list_pool=ghv.list_pool)
+        
+    return render_template('form-view.html',
+                           pages=pages,
+                           form=GrantForm())
+
+@app.route('/<route>')
 def generic_view(route):
 
     if route == 'grant-hunter':
