@@ -64,7 +64,9 @@ function partition_chart(id, json_file) {
         .attr("d", arc)
         .style("fill", function(d) { return d.fill; })
         .each(function(d) { this._current = updateArc(d); })
-        .on("click", zoomIn);
+        .on("click", zoomIn)
+        .append("title")
+        .text(function(d) { return d.name; });
 
 
     function zoomIn(p) {
