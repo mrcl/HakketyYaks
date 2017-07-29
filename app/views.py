@@ -2,7 +2,7 @@ from app import app
 from flask import render_template, request, flash, redirect
 
 from .pages import pages
-
+from .forms import GrantForm
 
 @app.route('/')
 def index():
@@ -16,7 +16,7 @@ def generic_view(route):
     return render_template(pages[route]['template'],
                            active=route,
                            page=pages[route],
-                           pages=pages)
+                           pages=pages,form=GrantForm())
 
 
 

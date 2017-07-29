@@ -11,7 +11,7 @@ pages = {
         'route': 'grant-hunter',
         'title': 'Grant Hunting App',
         'db_document': 'grant-hunter',
-        'template': 'list-view.html'
+        'template': 'form-view.html'
     },
     'mind-the-gap': {
         'name': 'Mind The Gap',
