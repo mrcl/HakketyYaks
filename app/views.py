@@ -48,9 +48,15 @@ def grant_hunter():
                                form=GrantForm(),
                                list_pool=ghv.list_pool)
         
-    return render_template('form-view.html',
+    return render_template('grant-hunter-form.html',
                            pages=pages,
-                           form=GrantForm())
+                           form=GrantForm(),
+				list_pool=ghv.list_pool,
+				list_area=ghv.list_area,
+				list_age=ghv.list_age,
+				list_group=ghv.list_group,
+				list_requestpercent=ghv.list_requestpercent
+				)
 
 @app.route('/<route>')
 def generic_view(route):
