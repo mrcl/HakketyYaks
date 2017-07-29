@@ -1,6 +1,10 @@
 
 .mtg h1,.mtg p{text-align:center;}
 
+.mtg .plus{font-size: 5em;
+    font-weight: bold;
+    margin: 0 0 0.4em 0;
+    line-height: 0.5em;}
 
 .goal{
     text-align: center;
@@ -29,4 +33,4 @@
 
 
 
-#goaldetail{clear:left;text-align:center;}
+#goaldetail{clear:left;text-align:center;margin-top: 3em;}
