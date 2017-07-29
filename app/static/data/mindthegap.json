@@ -1,0 +1,98 @@
+{
+    "title" : "UN Sustainable Development Goals Expenditure",
+    "Goals" : [
+        
+        {
+            "Name" : "No Poverty",
+            "Number" : 1,
+            "Revenue" : [
+
+            ],
+            "Expenditure" : [
+
+            ]
+        },
+    
+        {
+            "Name" : "Clean water and sanitation",
+            "Number" : 6,
+            "Standards" : [
+                {
+                    "ID" : 1,
+                    "Title" : "Swimmable Standard"
+                },
+                {
+                    "ID" : 2,
+                    "Title" : "World Health Organisation Drinking Water standard"
+                },
+                {
+                    "ID" : 3,
+                    "Title" : "ISO Standard"
+                }
+            ],
+            "Needed" : [{
+                    "Title" : "Removing Nitrate from Rivers",
+                    "Reference" : "https://www.ourwaterourvote.org.nz/uploads/NZ%20Dairy%20Farming%20-%20Milking%20our%20Environment%20for%20all%20its%20worth.pdf",
+                    "Amounts" : [
+                        {
+                            "Standard" : 1,
+                            "Upper" : 1000000,
+                            "Lower" : 10000
+                        },
+                        {
+                            "Standard" : 2,
+                            "Upper" : 1000000,
+                            "Lower" : 10000
+                        },
+                        {
+                            "Standard" : 3,
+                            "Upper" : 1000000,
+                            "Lower" : 10000
+                        }
+                    ]
+
+                },
+                {   
+
+                }
+
+            ],
+            "Committed" : [{
+                    "title" : "Freshwater Improvement Fund",
+                    "Sector" : "Government | Other",
+                    "Description" : "This is an NGO or a charity or an individual etc...",
+                    "Amounts" : [
+                        {
+                            "Standard" : 1,
+                            "Amount" : 1000000
+                        },
+                        {
+                            "Standard" : 2,
+                            "Amount" : 1000000
+                        },
+                        {
+                            "Standard" : 3,
+                            "Amount" : 1000000
+                        }
+                    ]
+                    
+                },{
+                    "Title" : "Dairy Industry Levy",
+                    "Sector" : "Government",
+                    "Amount" : "10000"
+                },{
+                    "Title" : "Million ",
+                    "Reference" : "https://millionmetres.org.nz",
+                    "Sector" : "Government",
+                    "Amount" : "10000"
+                },
+                {
+                    "Title" : "Farmers direct environmental action",
+                    "Sector" : "Private",
+                    "Reference" : "http://www.dairyatwork.co.nz/land-water/dairy-farmers-have-spent-one-billion-dollars-protecting-and-improving-the-environment-over-the-past-five-years/",
+                    "Amount" : "10000"
+                }
+            ]
+        }
+    ]
+}

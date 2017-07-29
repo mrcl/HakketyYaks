@@ -18,6 +18,6 @@ pages = {
         'route': 'mindthegap',
         'title': 'Mind The Gap',
         'db_document': 'mindthegap',
-        'template': 'list-view.html'
+        'template': 'mindthegap.html'
     }
 }
