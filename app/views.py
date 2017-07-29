@@ -8,7 +8,14 @@ def index():
                            active='tab-info')
 
 
-@app.route('/partion')
+@app.route('/partition')
 def partition_chart():
     return render_template('widgets/partition_chart.html',
                            active='tab-info')
+
+@app.route('/tree')
+def collapsible_tree():
+    return render_template('widgets/collapsible_tree.html',
+                           active='tab-info')
+
+
