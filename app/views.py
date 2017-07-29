@@ -1,14 +1,38 @@
+import os
+import re
+from glob import glob
 from app import app
-from flask import render_template, request, flash, redirect
-
+from flask import render_template, request, flash, redirect, url_for
 from .pages import pages
 from .forms import GrantForm
+
 
 @app.route('/')
 def index():
     return render_template('index.html',
                            active='/',
                            pages=pages)
+
+
+
+@app.route('/nz-revenue')
+def revenue():
+
+    path = url_for('static', filename='data/revenue')
+    report_files = glob('app%s/*json'%path)
+
+    reports = {}
+    for rf in report_files:
+        reports['year'] = re.findall('201\d', rf)[0]
+        reports['json_file'] = rf.replace('app', '')
+
+    route = 'nz-revenue'
+
+    return render_template(pages[route]['template'],
+                           active=route,
+                           page=pages[route],
+                           pages=pages,
+                           reports=reports)
 
 
 @app.route('/<route>', methods=['GET', 'POST'])
