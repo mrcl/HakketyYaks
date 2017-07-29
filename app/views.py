@@ -11,12 +11,21 @@ def index():
                            pages=pages)
 
 
-@app.route('/<route>')
+@app.route('/<route>', methods=['GET', 'POST'])
 def generic_view(route):
-    return render_template(pages[route]['template'],
-                           active=route,
-                           page=pages[route],
-                           pages=pages,form=GrantForm())
+
+    if route == 'grant-hunter':
+        return render_template(pages[route]['template'],
+                               active=route,
+                               page=pages[route],
+                               pages=pages,
+                               form=GrantForm())
+
+    else:
+        return render_template(pages[route]['template'],
+                               active=route,
+                               page=pages[route],
+                               pages=pages)
 
 
 
