@@ -13,11 +13,11 @@ pages = {
         'db_document': 'grant-hunter',
         'template': 'list-view.html'
     },
-    'crowdsourcing': {
-        'name': 'Crowd Sourcing',
-        'route': 'crowdsourcing',
-        'title': 'Crowdsourcing',
-        'db_document': 'crowdsourcing',
+    'mind-the-gap': {
+        'name': 'Mind The Gap',
+        'route': 'mindthegap',
+        'title': 'Mind The Gap',
+        'db_document': 'mindthegap',
         'template': 'list-view.html'
     }
 }
