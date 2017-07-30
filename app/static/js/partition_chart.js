@@ -63,13 +63,12 @@ function partition_chart(id, json_file) {
         .enter().append("path")
         .attr("d", arc)
         .style("fill", function(d) { return d.fill; })
-        .on("click", zoomIn)
-        .each(function(d) { this._current = updateArc(d); });
+        .each(function(d) { this._current = updateArc(d); })
+        .on("click", zoomIn);
         // .append("title")
         // .text(function(d) { return d.name; });
 
     function zoomIn(p) {
-      console.log(p)
       if (p.depth > 1) p = p.parent;
       if (!p.children) return;
       zoom(p, p);
@@ -107,6 +106,7 @@ function partition_chart(id, json_file) {
       if (root === p) enterArc = outsideArc, exitArc = insideArc, outsideAngle.range([p.x, p.x + p.dx]);
 
       path = path.data(partition.nodes(root).slice(1), function(d) { return d.key; });
+      console.log(p);
 
       // When zooming out, arcs enter from the inside and exit to the outside.
       // Exiting outside arcs transition to the new layout.
@@ -121,11 +121,9 @@ function partition_chart(id, json_file) {
         path.enter().append("path")
             .style("fill-opacity", function(d) { return d.depth === 2 - (root === p) ? 1 : 0; })
             .style("fill", function(d) { return d.fill; })
-            .each(function(d) { this._current = enterArc(d); })
             .on("click", zoomIn)
-            .append("title")
-            .text(function(d) { return d.name; });
-
+            .each(function(d) { this._current = enterArc(d); });
+            
         path.transition()
             .style("fill-opacity", 1)
             .attrTween("d", function(d) { return arcTween.call(this, updateArc(d)); });
