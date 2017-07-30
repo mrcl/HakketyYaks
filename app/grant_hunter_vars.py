@@ -1,10 +1,10 @@
 
 def calc_approve( pool, area, age, group, amount, percent ):
 
-	debug=False   
+	debug=False
 
 	print("calculating results")
-  
+
 	approve=0.65
 	decline=0.35
 
@@ -51,7 +51,7 @@ list_pool={
     'Community Events Sponsorship':(0.014,0.026),
     'Wellington Regional Amenities Fund':(0.005,0.018),
     'General Grants':(0.189,0.111),
-    'Arts And Culture Fund':(0.147,0.208) 
+    'Arts And Culture Fund':(0.147,0.208)
 }
 
 list_area={
@@ -111,22 +111,3 @@ list_percent={
     '<=90':(0.040,0.051),
     '<=100':(0.242,0.328)
 }
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-	
-

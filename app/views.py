@@ -18,7 +18,7 @@ def index():
 @app.route('/nz-revenue/<year>')
 def revenue(year=None):
     path = url_for('static', filename='data/revenue')
-    report_files = glob('app%s/*json'%path)
+    report_files = glob('app%s/old/*.json'%path)
 
     reports = {}
     for rf in report_files:
@@ -59,7 +59,7 @@ def grant_hunter():
                                form=GrantForm(),
                                result=result,
                                list_pool=ghv.list_pool)
-        
+
     return render_template('grant-hunter-form.html',
                            pages=pages,
                            form=GrantForm(),
@@ -70,6 +70,8 @@ def grant_hunter():
 				list_amount=ghv.list_amount,
 				list_percent=ghv.list_percent
 				)
+
+
 
 @app.route('/value-ink', methods=['GET', 'POST'])
 def value_ink():
@@ -123,13 +125,14 @@ def value_ink():
                            selection_based_result=None)
 
 
-@app.route('/<route>')
-def generic_view(route):
-
+@app.route('/mind-the-gap')
+def generic_view():
+    route = 'mind-the-gap'
     return render_template(pages[route]['template'],
                            active=route,
                            page=pages[route],
                            pages=pages)
+
 
 
 @app.route('/partition')

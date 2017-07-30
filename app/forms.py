@@ -1,4 +1,3 @@
-from flask.ext.wtf import Form
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, FieldList, BooleanField, SelectField
 from wtforms.validators import DataRequired, Email, Required
@@ -9,11 +8,17 @@ age_choices = [
     ('Age 45-64', 'Age 45-64'),
     ('Age 65+', 'Age 65+')]
 
+
 class GrantForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired(), Email()])
+    pool = StringField('pool', validators=[DataRequired()])
+    area = StringField('area', validators=[DataRequired()])
+    age = StringField('age', validators=[DataRequired()])
+    group = StringField('group', validators=[DataRequired()])
+    amount = StringField('amount', validators=[DataRequired()])
+    percent = StringField('percent', validators=[DataRequired()])
 
 
-class ValueInkForm(Form):
+class ValueInkForm(FlaskForm):
     # age_group = StringField('What is your age group?', validators=[DataRequired()])
     age_group = SelectField(u'What is your age group?', choices=age_choices, validators=[Required()])
 
