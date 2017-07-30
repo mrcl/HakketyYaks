@@ -5,27 +5,27 @@
         {
             "Name" : "No Poverty",
             "Number" : 1,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Zero Hunger",
             "Number" : 2,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Good health and well-being",
             "Number" : 3,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Quality Education",
             "Number" : 4,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Gender Equality",
             "Number" : 5,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Clean water and sanitation",
@@ -44,121 +44,73 @@
                     "Title" : "ISO Standard"
                 }
             ],
-            "Data" : [
+            "References" : [
                 {
-                    "Title" : "Needed",
-                    "Children" : [
-                        {
-                            "Title" : "Removing Nitrate from Rivers",
-                            "Sector" : "Government",
-                            "Reference" : "https://www.ourwaterourvote.org.nz/uploads/NZ%20Dairy%20Farming%20-%20Milking%20our%20Environment%20for%20all%20its%20worth.pdf",
-                            "Amount" : 1000,
-                            "Amounts" : [
-                                {
-                                    "Standard" : 1,
-                                    "Upper" : 1000000,
-                                    "Lower" : 10000
-                                },
-                                {
-                                    "Standard" : 2,
-                                    "Upper" : 1000000,
-                                    "Lower" : 10000
-                                },
-                                {
-                                    "Standard" : 3,
-                                    "Upper" : 1000000,
-                                    "Lower" : 10000
-                                }
-                            ]
-                        },
-                        {   
-
-                        }
-                    ]
+                    "Title" : "Water Quality - Surface Water Sites",
+                    "URL" : "https://catalogue.data.govt.nz/dataset/water-quality-surface-water-sites",
+                    "Contribution" : ""
                 },
                 {
-                    "Title" : "Committed",
-                    "Children" : [
-                        {
-                            "Title" : "Freshwater Improvement Fund",
-                            "Sector" : "Government",
-                            "Description" : "This is an NGO or a charity or an individual etc...",
-                            "Amount" : "10000"
-                        
-                        },{
-                            "Title" : "Dairy Industry Levy",
-                            "Sector" : "Government",
-                            "Amount" : "10000"
-                        },{
-                            "Title" : "Million ",
-                            "Reference" : "https://millionmetres.org.nz",
-                            "Sector" : "Government",
-                            "Amount" : "10000"
-                        },
-                        {
-                            "Title" : "Farmers direct environmental action",
-                            "Sector" : "Other",
-                            "Reference" : "http://www.dairyatwork.co.nz/land-water/dairy-farmers-have-spent-one-billion-dollars-protecting-and-improving-the-environment-over-the-past-five-years/",
-                            "Amount" : "10000"
-                        }
-                    ]
+                    "Title" : "Water Pools",
+                    "URL" : "http://nzherald.co.nz",
+                    "Contribution" : ""
                 }
             ]
         },
         {
             "Name" : "Affordable and Clean Energy",
             "Number" : 7,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Decent work and economic growth",
             "Number" : 8,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Industry, Innovation and Infrastructure",
             "Number" : 9,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Reduced Inequalities",
             "Number" : 10,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Sustainable Cities and Communities",
             "Number" : 11,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Responsible consumption and production",
             "Number" : 12,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Climate action",
             "Number" : 13,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Life below water",
             "Number" : 14,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Life on land",
             "Number" : 15,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Peace, justice and strong institutions",
             "Number" : 16,
-            "Data" : []
+            "References" : []
         },
         {
             "Name" : "Partnerships for the goals",
             "Number" : 17,
-            "Data" : []
+            "References" : []
         }
     ]
 }

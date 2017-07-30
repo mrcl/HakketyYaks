@@ -1,6 +1,6 @@
 var marginStacked = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 600 - marginStacked.left - marginStacked.right,
-    height = 500 - marginStacked.top - marginStacked.bottom;
+    width = 800 - marginStacked.left - marginStacked.right,
+    height = 650 - marginStacked.top - marginStacked.bottom;
 
 
 $( document ).ready(function() {
@@ -39,8 +39,20 @@ $.mindthegap = {
             }
         }
         
-        var stOut = '<h2>'+theGoal.Number+': '+theGoal.Name+'</h2><div id="chart"></div>';
+        var stOut = '<h2>'+theGoal.Number+': '+theGoal.Name+'</h2><p class="text-uppercase small">Annual Expenditure Figures</p> <div id="chart"></div>';
 
+        if(theGoal.References){
+            stOut += '<div class="ref"><h2>Referenced Datasets</h2><ul>'
+            if(theGoal.References.length > 0){
+                for(var m = 0;m < theGoal.References.length; m++){
+                    stOut += '<li><a href="'+theGoal.References[m].URL+'">'+theGoal.References[m].Title+'</a></li>';
+                }
+            }else{
+                stOut += '<li>No found expenditure datasets, if you know of data that exists, <a href="mailto:HakketyYaks@gmail.com">please let us know</a>.</li>';
+            }
+            stOut += '</ul></div>';
+        }
+        
         $('#goaldetail').html(stOut);
         $('#goaldetail').fadeIn();
         $('#goaldetail').append($.mindthegap.rendergraph(theGoal));
@@ -50,8 +62,10 @@ $.mindthegap = {
     },
     rendergraph : function(theGoal){
         var svg = d3.select("#chart").append("svg")
-            .attr("width", width + marginStacked.left + marginStacked.right)
-            .attr("height", height + marginStacked.top + marginStacked.bottom);
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 " + (width + marginStacked.left + marginStacked.right) + " " + (height + marginStacked.top + marginStacked.bottom) );
+            //.attr("width", width + marginStacked.left + marginStacked.right)
+            //.attr("height", height + marginStacked.top + marginStacked.bottom);
 
         
         g = svg.append("g").attr("transform", "translate(" + marginStacked.left + "," + marginStacked.top + ")");

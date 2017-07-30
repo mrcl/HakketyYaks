@@ -12,25 +12,25 @@
 {% endblock %}
 
 {% block content %}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
 <div class="mtg">
     <h1>{{ page['title'] }}</h1>
     <p>The United Nations wants to end poverty, protect the planet, and ensure prosperity for all.<br>
         In New Zealand, the goals below show the gap between what’s needed and what’s being done.<br>
-        Help us Mind the Gap! by building on what we know, tell us what we’ve missed and taking action to close the gap:<br>
-        <a href="#">-> Data we’ve asked for.</a><br>
-        <a href="#">-> Make a data request.</a><br>
-        <a href="#">-> Tell us what we don’t know.</a><br>
-        <a href="#">-> Do something!</a>
+        Help us Mind the Gap! by building on what we know, tell us what we’ve missed and taking action to close the gap:</p><p>
+        <a href="https://data.govt.nz/request-data/" class="btn btn-default">Data requested</a>
+        <a href="https://data.govt.nz/request-data/" class="btn btn-default">Make a data request</a>
+        <a href="mailto:HakketyYaks@gmail.com" class="btn btn-default">Tell us what we don’t know</a>
+        <a href="http://www.un.org/sustainabledevelopment/sustainable-development-goals/" class="btn btn-default">UN Sustainability Development Goals</a></p>
 
 
     
     <!--p class="plus">+</p-->
     <div id="goals"></div>
     <div id="goaldetail"></div>
-    <p>
-    <a href="http://twitter.com/HakketyYaks">@HakketyYaks</a><br>
-    <a href="mailto:HakketyYaks@gmail.com">HakketyYaks@gmail.com</a>
-    </p>
+</div>
+</div>
 </div>
 
 {% endblock %}

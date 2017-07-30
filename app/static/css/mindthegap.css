@@ -34,4 +34,8 @@ h2{margin-bottom:1em;}
 
 
 
-#goaldetail{clear:left;text-align:center;margin-top: 3em;margin: 0 AUTO;width: 50%;}
+#goaldetail{clear:left;text-align:center;margin-top: 3em;width:80%;margin:0 auto;}
+
+.ref{}
+.ref ul{margin:0;padding:0;border-top:solid 1px #333;border-bottom:solid 1px #333;padding-top:1em;padding-bottom:1em;}
+.ref li{list-style:none;margin:0;padding:0;}
