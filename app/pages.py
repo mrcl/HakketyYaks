@@ -22,7 +22,7 @@ pages = {
     },
     'mind-the-gap': {
         'name': 'Mind The Gap',
-        'route': 'mindthegap',
+        'route': 'mind-the-gap',
         'title': 'Mind The Gap',
         'db_document': 'mindthegap',
         'template': 'mindthegap.html'
