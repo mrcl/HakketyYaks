@@ -131,38 +131,73 @@
     });
 
     chart.render();
+
+    var chart2 = new CanvasJS.Chart("chartContainer2",
+    {
+      title:{
+        text: "Government expenditure on community values"
+      },
+      data: [
+      {
+       type: "doughnut",
+       dataPoints: [
+       {  y: 1.08, indexLabel: "Environment" },
+       {  y: 0.35, indexLabel: "Agriculture" },
+       {  y: 0.08, indexLabel: "NZ history" },
+       {  y: 0.01, indexLabel: "NZ symbols" },
+       {  y: 0.01, indexLabel: "Sports" },
+       {  y: 0, indexLabel: "Arts" },
+       {  y: 0, indexLabel: "Multiculturalism" },
+       {  y: 0.04, indexLabel: "Maori culture" },
+       {  y: 0.3, indexLabel: "The people of NZ" },
+       {  y: 35, indexLabel: "Freedom & rights" },
+       {  y: 63, indexLabel: "Non value aligned expenditure" }
+       ]
+
+     }
+     ]
+   });
+
+    chart2.render();
   }
   </script>
- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
  {% endblock %}
 
 {% block content %}
   <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-
+  <div class="col-md-8 col-md-offset-2">
   {% from "includes/_formhelpers.html" import render_field %}
   <div class="form-container thumbnail">
     <form method="POST">
+        <h1>Welcome to Value Ink</h1>
+        <p>This is a simple service to show you how much the Central New Zealand Government spends on issues dear to your heart, and how your values compare to those of other age groups in New Zealand.</p>
+        <br/>
         {{ form.hidden_tag() }}
         {# <p>{{ form.age_group }}</p>#}
-        {{ render_field(form.age_group) }}
-        {{ render_field(form.checkbox_1) }}
-        {{ render_field(form.checkbox_2) }}
-        {{ render_field(form.checkbox_3) }}
-        {{ render_field(form.checkbox_4) }}
-        {{ render_field(form.checkbox_5) }}
-        {{ render_field(form.checkbox_6) }}
-        {{ render_field(form.checkbox_7) }}
-        {{ render_field(form.checkbox_8) }}
-        {{ render_field(form.checkbox_9) }}
-        {{ render_field(form.checkbox_10) }}
-        <div class="row">
-          <div class="col-sm-9">
-            <button type="submit" class="btn btn-primary btn-block">Update User</button>
-          </div>
+        {{ render_field(form.age_group, field_value=False) }}
+        <br/>
+        <div class="form-group">
+          <h3>What are the values you care about?</h3>
         </div>
+        {{ render_field(form.checkbox_1, field_value=False) }}
+        {{ render_field(form.checkbox_2, field_value=False) }}
+        {{ render_field(form.checkbox_3, field_value=False) }}
+        {{ render_field(form.checkbox_4, field_value=False) }}
+        {{ render_field(form.checkbox_5, field_value=False) }}
+        {{ render_field(form.checkbox_6, field_value=False) }}
+        {{ render_field(form.checkbox_7, field_value=False) }}
+        {{ render_field(form.checkbox_8, field_value=False) }}
+        {{ render_field(form.checkbox_9, field_value=False) }}
+        {{ render_field(form.checkbox_10, field_value=False ) }}
+        <button type="submit" class="btn btn-primary btn-block">Update User</button>
     </form>
     <br/>
+    {% if selection_based_result != None %}
+      <h2>Your age group</h2>
+      <p>The proportion of the Central Government budget spent on your personal values in 2017 was {{ selection_based_result }}%.</p>
+      {{ facts | safe }}
+    {% endif %}
 </div>
 
 <div class="row">
@@ -170,5 +205,11 @@
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
   </div>
+
+  <div class="col-12">
+    <div id="chartContainer2" style="height: 300px; width: 100%;">
+    </div>
+  </div>
 </div>
+<p>Data for this analysis was drawn from StatsNZ General Social Survey 2016 (Social Identity Measures) and from the New Zealand Central Government Treasury Expenditure data.</p>
 {% endblock %}

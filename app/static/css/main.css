@@ -8,3 +8,7 @@ svg {
 h2 {
   text-align: center;
 }
+
+.form-container{
+  padding: 1rem 3rem;
+}

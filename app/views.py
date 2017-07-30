@@ -4,6 +4,7 @@ from glob import glob
 from app import app
 from flask import render_template, request, flash, redirect, url_for
 from .pages import pages
+from .value_ink_vars import FACTS
 from .forms import GrantForm, ValueInkForm
 import app.grant_hunter_vars as ghv
 
@@ -75,26 +76,60 @@ def value_ink():
     form = ValueInkForm()
 
     if form.validate_on_submit() or request.method == 'POST':
-        
+
+        p_budget_values = [
+            1.084671616,
+            0.348805923,
+            0.081447637,
+            0.009242686,
+            0.013894476,
+            0,
+            0,
+            0.039521726,
+            0.309450566,
+            35.37391036,
+        ]
+
+        check_box_list_results = [
+            form.checkbox_1.data,
+            form.checkbox_2.data,
+            form.checkbox_3.data,
+            form.checkbox_4.data,
+            form.checkbox_5.data,
+            form.checkbox_6.data,
+            form.checkbox_7.data,
+            form.checkbox_8.data,
+            form.checkbox_9.data,
+            form.checkbox_10.data,
+        ]
+
+        selection_based_result = 0
+        for cb, v in zip(check_box_list_results, p_budget_values):
+            if cb:
+                selection_based_result += v
+
+        print('age_group', form.age_group.data)
         return render_template('value-ink.html',
                                pages=pages,
                                method=request.method,
-                               form=form)
+                               form=form,
+                               selection_based_result='%3.2f' % selection_based_result,
+                               facts=FACTS[form.age_group.data])
 
 
     return render_template('value-ink.html',
                            pages=pages,
-                           form=form)
+                           form=form,
+                           selection_based_result=None)
 
 
-@app.route('/generic_view')
+@app.route('/<route>')
 def generic_view(route):
 
     return render_template(pages[route]['template'],
                            active=route,
                            page=pages[route],
                            pages=pages)
-
 
 
 @app.route('/partition')
