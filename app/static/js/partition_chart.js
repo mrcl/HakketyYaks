@@ -106,7 +106,6 @@ function partition_chart(id, json_file) {
       if (root === p) enterArc = outsideArc, exitArc = insideArc, outsideAngle.range([p.x, p.x + p.dx]);
 
       path = path.data(partition.nodes(root).slice(1), function(d) { return d.key; });
-      console.log(p);
 
       // When zooming out, arcs enter from the inside and exit to the outside.
       // Exiting outside arcs transition to the new layout.
@@ -123,7 +122,7 @@ function partition_chart(id, json_file) {
             .style("fill", function(d) { return d.fill; })
             .on("click", zoomIn)
             .each(function(d) { this._current = enterArc(d); });
-            
+
         path.transition()
             .style("fill-opacity", 1)
             .attrTween("d", function(d) { return arcTween.call(this, updateArc(d)); });
