@@ -64,9 +64,9 @@ function partition_chart(id, json_file) {
         .attr("d", arc)
         .style("fill", function(d) { return d.fill; })
         .each(function(d) { this._current = updateArc(d); })
-        .on("click", zoomIn);
-        // .append("title")
-        // .text(function(d) { return d.name; });
+        .on("click", zoomIn)
+        .append("title")
+        .text(function(d) { return d.name; });
 
     function zoomIn(p) {
       if (p.depth > 1) p = p.parent;
@@ -123,7 +123,7 @@ function partition_chart(id, json_file) {
             .style("fill", function(d) { return d.fill; })
             .on("click", zoomIn)
             .each(function(d) { this._current = enterArc(d); });
-            
+
         path.transition()
             .style("fill-opacity", 1)
             .attrTween("d", function(d) { return arcTween.call(this, updateArc(d)); });
