@@ -7,18 +7,30 @@
 
 {% block scripts %}
 {{ super() }}
-        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="{{url_for('static', filename='js/mindthegap.js')}}"></script>
 {% endblock %}
 
 {% block content %}
 <div class="mtg">
     <h1>{{ page['title'] }}</h1>
-    <p>Minding the gap between the estimated costs for NZ to achieve it's UN Sustainability Goals and current known expenditure.</p>
-    <p class="plus">+</p>
-    <p>Illustrate the gaps that exist in the open data available from <a href="http://data.govt.nz">data.govt.nz.</a></p>
+    <p>The United Nations wants to end poverty, protect the planet, and ensure prosperity for all.<br>
+        In New Zealand, the goals below show the gap between what’s needed and what’s being done.<br>
+        Help us Mind the Gap! by building on what we know, tell us what we’ve missed and taking action to close the gap:<br>
+        <a href="#">-> Data we’ve asked for.</a><br>
+        <a href="#">-> Make a data request.</a><br>
+        <a href="#">-> Tell us what we don’t know.</a><br>
+        <a href="#">-> Do something!</a>
+
+
+    
+    <!--p class="plus">+</p-->
     <div id="goals"></div>
-    <div id="goaldetail"><svg width="960" height="500"></svg></div>
+    <div id="goaldetail"></div>
+    <p>
+    <a href="http://twitter.com/HakketyYaks">@HakketyYaks</a><br>
+    <a href="mailto:HakketyYaks@gmail.com">HakketyYaks@gmail.com</a>
+    </p>
 </div>
 
 {% endblock %}
