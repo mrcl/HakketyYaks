@@ -23,6 +23,7 @@
 
   <h1>{{ page['title'] }}</h1>
   <br/>
+  <div class="col-md-8 col-md-offset-2">
   {% for year in years %}
     <a href="/nz-revenue/{{ year }}">
     <div class="col-sm-6 col-md-4">
@@ -38,6 +39,7 @@
   {% endfor %}
   <div class="img-container col-12">
     <img width="100%" src="{{ url_for('static', filename='imgs/tax_contributions.png')}}" alt="">
+  </div>
   </div>
 </div>
 {% endif %}
