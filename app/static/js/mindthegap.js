@@ -39,13 +39,14 @@ $.mindthegap = {
             }
         }
         
-        var stOut = '<h2>'+theGoal.Number+': '+theGoal.Name+'</h2><p class="text-uppercase small">Annual Expenditure Figures</p> <div id="chart"></div>';
+        var stOut = '<h2>'+theGoal.Number+': '+theGoal.Name+'</h2><p class="text-uppercase small">Annual Expenditure Figures (000s)</p> <div id="chart"></div>';
 
         if(theGoal.References){
             stOut += '<div class="ref"><h2>Referenced Datasets</h2><ul>'
             if(theGoal.References.length > 0){
                 for(var m = 0;m < theGoal.References.length; m++){
-                    stOut += '<li><a href="'+theGoal.References[m].URL+'">'+theGoal.References[m].Title+'</a></li>';
+                    stOut += '<li><a href="'+theGoal.References[m].URL+'">'+theGoal.References[m].Title+'</a>';
+                    if(theGoal.References[m].Contribution && theGoal.References[m].Contribution.length > 0)stOut += ' (' + theGoal.References[m].Contribution + ')</li>';
                 }
             }else{
                 stOut += '<li>No found expenditure datasets, if you know of data that exists, <a href="mailto:HakketyYaks@gmail.com">please let us know</a>.</li>';

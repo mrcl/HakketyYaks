@@ -20,7 +20,18 @@
         {
             "Name" : "Quality Education",
             "Number" : 4,
-            "References" : []
+            "References" : [
+                {
+                    "Title" : "Public Expenditure on Early Childhood Education",
+                    "URL" : "https://catalogue.data.govt.nz/dataset/public-expenditure-on-early-childhood-education/resource/39874893-dc6f-4e97-95c9-d4c639e7a2e4",
+                    "Contribution" : "$1,641,314"
+                },
+                {
+                    "Title" : "Total Public Expenditure on Education",
+                    "URL" : "https://catalogue.data.govt.nz/dataset/total-public-expenditure-on-education/resource/6ede8e0e-debf-4579-8413-405e4e7bbb07",
+                    "Contribution" : "File not found"
+                }
+            ]
         },
         {
             "Name" : "Gender Equality",
