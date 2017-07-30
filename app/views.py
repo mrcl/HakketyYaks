@@ -55,6 +55,7 @@ def grant_hunter():
 				list_area=ghv.list_area,
 				list_age=ghv.list_age,
 				list_group=ghv.list_group,
+				list_amount=ghv.list_amount,
 				list_requestpercent=ghv.list_requestpercent
 				)
 
