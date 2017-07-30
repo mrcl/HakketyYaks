@@ -40,12 +40,23 @@ def revenue(year=None):
 
 @app.route('/grant-hunter', methods=['GET', 'POST'])
 def grant_hunter():
+    form = GrantForm()
+    if form.validate_on_submit() and request.method == 'POST':
+    #if request.method == 'POST':
+        pool = form.pool.data
+        area = form.area.data
+        age = form.age.data
+        group = form.group.data
+        amount = form.amount.data
+        percent = form.percent.data
 
-    if request.method == 'POST':
+        result = ghv.calc_approve(pool,area,age,group,amount,percent)
+
         return render_template('grant-hunter-results.html',
                                pages=pages,
                                method=request.method,
                                form=GrantForm(),
+                               result=result,
                                list_pool=ghv.list_pool)
         
     return render_template('grant-hunter-form.html',
@@ -56,7 +67,7 @@ def grant_hunter():
 				list_age=ghv.list_age,
 				list_group=ghv.list_group,
 				list_amount=ghv.list_amount,
-				list_requestpercent=ghv.list_requestpercent
+				list_percent=ghv.list_percent
 				)
 
 @app.route('/value-ink', methods=['GET', 'POST'])

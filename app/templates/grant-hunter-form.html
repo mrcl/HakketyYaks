@@ -6,41 +6,43 @@
 
   <form action="" method="post" name="login">
       {{ form.hidden_tag() }}
+	
+	<h1>Grant Application</h1>
 
-	<label>Select Funding Pool:</label>
-        <select name="option" width="300px">
+	<label>Which funding pool do you wish to access?</label>
+        <select name="pool" width="300px">
         {% for x in list_pool %}
         <option value="{{ x }}" SELECTED>{{ x }}</option>
         {% endfor %}
         </select>
 	<br>
 
-	<label>Select Area:</label>
-        <select name="option" width="300px">
+	<label>What area will your grant benefit?</label>
+        <select name="area" width="300px">
         {% for x in list_area %}
         <option value="{{ x }}" SELECTED>{{ x }}</option>
         {% endfor %}
         </select>
 	<br>
 
-	<label>Select Target Age Group:</label>
-        <select name="option" width="300px">
+	<label>Which age group will benefit?</label>
+        <select name="age" width="300px">
         {% for x in list_age %}
         <option value="{{ x }}" SELECTED>{{ x }}</option>
         {% endfor %}
         </select>
 	<br>
 
-	<label>Select Target Group:</label>
-        <select name="option" width="300px">
+	<label>Which group will benefit?</label>
+        <select name="group" width="300px">
         {% for x in list_group %}
         <option value="{{ x }}" SELECTED>{{ x }}</option>
         {% endfor %}
         </select>
 	<br>
 
-	<label>Select Amount:</label>
-        <select name="option" width="300px">
+	<label>What is the total value of your project?</label>
+        <select name="amount" width="300px">
         {% for x in list_amount %}
         <option value="{{ x }}" SELECTED>{{ x }}</option>
         {% endfor %}
@@ -48,9 +50,9 @@
 	<br>
 
 	
-	<label>Select the percentage of the total amount which you want funded:</label>
-        <select name="option" width="300px">
-        {% for x in list_requestpercent %}
+	<label>What percentage do you want funded?</label>
+        <select name="percent" width="300px">
+        {% for x in list_percent %}
         <option value="{{ x }}" SELECTED>{{ x }}</option>
         {% endfor %}
         </select>
