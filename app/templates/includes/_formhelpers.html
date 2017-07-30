@@ -1,0 +1,18 @@
+{% macro render_field(field, field_value='') %}
+  <div class="form-group">
+    {% if field.type != "BooleanField" %}
+      {{ field.label }}
+      {{ field(class='form-control', value=field_value, placeholder=field.description, **kwargs)|safe }}
+    {% else %}
+      {{ field( checked=field_value, **kwargs)|safe }} {{ field.label }}
+    {% endif %}
+  </div>
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </dd>
+{% endmacro %}

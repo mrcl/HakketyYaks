@@ -45,19 +45,13 @@ def grant_hunter():
         return render_template('grant-hunter-results.html',
                                pages=pages,
                                method=request.method,
-                               form=GrantForm(),
+                               form=ValueInkForm(),
                                list_pool=ghv.list_pool)
-        
-    return render_template('grant-hunter-form.html',
+
+    return render_template('form-view.html',
                            pages=pages,
-                           form=GrantForm(),
-				list_pool=ghv.list_pool,
-				list_area=ghv.list_area,
-				list_age=ghv.list_age,
-				list_group=ghv.list_group,
-				list_amount=ghv.list_amount,
-				list_requestpercent=ghv.list_requestpercent
-				)
+                           form=ValueInkForm())
+
 
 @app.route('/value-ink', methods=['GET', 'POST'])
 def value_ink():

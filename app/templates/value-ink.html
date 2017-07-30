@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+  {{ super() }}
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+      text: "How much do your values matter to other age groups?"
+      },
+      axisY:{
+   //     minimum: 50,
+      maximum: 11
+     },
+      data: [
+      {
+        label: "The importance of history in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of history in defining NZ",  y: 7  },
+{ label: "The importance of history in defining NZ", y: 7  },
+{ label: "The importance of history in defining NZ", y: 6  },
+{ label: "The importance of history in defining NZ",  y: 6  }
+        ]
+      },
+       {
+        label: "The importance of art and artistic achievement in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of art and artistic achievement in defining NZ",  y: 1  },
+{ label: "The importance of art and artistic achievement in defining NZ", y: 1  },
+{ label: "The importance of art and artistic achievement in defining NZ", y: 1  },
+{ label: "The importance of art and artistic achievement in defining NZ",  y: 2  }
+        ]
+      },
+              {
+        label: "The importance of sports and sporting achievements in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of sports and sporting achievements in defining NZ",  y: 4  },
+{ label: "The importance of sports and sporting achievements in defining NZ", y: 3  },
+{ label: "The importance of sports and sporting achievements in defining NZ", y: 5  },
+{ label: "The importance of sports and sporting achievements in defining NZ",  y: 5  }
+        ]
+      },
+              {
+        label: "The importance of freedom, rights and peace in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of freedom, rights and peace in defining NZ",  y: 10  },
+{ label: "The importance of freedom, rights and peace in defining NZ", y: 9  },
+{ label: "The importance of freedom, rights and peace in defining NZ", y: 9  },
+{ label: "The importance of freedom, rights and peace in defining NZ",  y: 9  }
+        ]
+      },
+              {
+        label: "The importance of natural scenery and environment in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of natural scenery and environment in defining NZ",  y: 9  },
+{ label: "The importance of natural scenery and environment in defining NZ", y: 10  },
+{ label: "The importance of natural scenery and environment in defining NZ", y: 10  },
+{ label: "The importance of natural scenery and environment in defining NZ",  y: 10  }
+        ]
+      },
+              {
+        label: "The importance of New Zealand symbols and icons in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of New Zealand symbols and icons in defining NZ",  y: 3  },
+{ label: "The importance of New Zealand symbols and icons in defining NZ", y: 2  },
+{ label: "The importance of New Zealand symbols and icons in defining NZ", y: 4  },
+{ label: "The importance of New Zealand symbols and icons in defining NZ",  y: 4  }
+        ]
+      },
+              {
+        label: "The importance of the people in New Zealand in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of the people in New Zealand in defining NZ",  y: 8  },
+{ label: "The importance of the people in New Zealand in defining NZ", y: 8  },
+{ label: "The importance of the people in New Zealand in defining NZ", y: 8  },
+{ label: "The importance of the people in New Zealand in defining NZ",  y: 7  }
+        ]
+      },
+              {
+        label: "The importance of agriculture and farming in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of agriculture and farming in defining NZ",  y: 6  },
+{ label: "The importance of agriculture and farming in defining NZ", y: 6  },
+{ label: "The importance of agriculture and farming in defining NZ", y: 7  },
+{ label: "The importance of agriculture and farming in defining NZ",  y: 8  }
+        ]
+      },
+              {
+        label: "The importance of multiculturalism and ethnic diversity in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of multiculturalism and ethnic diversity in defining NZ",  y: 2  },
+{ label: "The importance of multiculturalism and ethnic diversity in defining NZ", y: 4 },
+{ label: "The importance of multiculturalism and ethnic diversity in defining NZ", y: 3  },
+{ label: "The importance of multiculturalism and ethnic diversity in defining NZ",  y: 3  }
+        ]
+      },
+              {
+        label: "The importance of Maori culture and cultural practices in defining NZ",
+        type: "line",
+        dataPoints: [
+{ label: "The importance of Maori culture and cultural practices in defining NZ",  y: 5  },
+{ label: "The importance of Maori culture and cultural practices in defining NZ", y: 5  },
+{ label: "The importance of Maori culture and cultural practices in defining NZ", y: 2  },
+{ label: "The importance of Maori culture and cultural practices in defining NZ",  y: 1  }
+        ]
+      },
+
+        {
+        type: "line",
+          lineColor: "white",
+          color: "white",
+        dataPoints: [
+{ label: "Age 15-24",  y: 0  },
+{ label: "Age 25-44", y: 0  },
+{ label: "Age 45-64", y: 0  },
+{ label: "Over 65",  y: 0  }
+        ]
+      },
+
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+ <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+ {% endblock %}
+
+{% block content %}
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+  {% from "includes/_formhelpers.html" import render_field %}
+  <div class="form-container thumbnail">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {# <p>{{ form.age_group }}</p>#}
+        {{ render_field(form.age_group) }}
+        {{ render_field(form.checkbox_1) }}
+        {{ render_field(form.checkbox_2) }}
+        {{ render_field(form.checkbox_3) }}
+        {{ render_field(form.checkbox_4) }}
+        {{ render_field(form.checkbox_5) }}
+        {{ render_field(form.checkbox_6) }}
+        {{ render_field(form.checkbox_7) }}
+        {{ render_field(form.checkbox_8) }}
+        {{ render_field(form.checkbox_9) }}
+        {{ render_field(form.checkbox_10) }}
+        <div class="row">
+          <div class="col-sm-9">
+            <button type="submit" class="btn btn-primary btn-block">Update User</button>
+          </div>
+        </div>
+    </form>
+    <br/>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div id="chartContainer" style="height: 300px; width: 100%;">
+    </div>
+  </div>
+</div>
+{% endblock %}

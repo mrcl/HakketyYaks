@@ -6,6 +6,13 @@ pages = {
         'db_document': 'nz-revenue',
         'template': 'nz-revenue.html'
     },
+    'value-ink': {
+        'name': 'Value Ink',
+        'route': 'value-ink',
+        'title': 'Mapping community values to goverment spending',
+        'db_document': 'value-ink',
+        'template': 'value-ink.html'
+    },
     'grant-hunter': {
         'name': 'Grant Hunter',
         'route': 'grant-hunter',
